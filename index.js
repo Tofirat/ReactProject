@@ -2,14 +2,17 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import route from"../routes/userRoute.js";
+import route from"./routes/userRoute.js";
 
-const app=express();
-app.use(bosyparser.json());
 dotenv.config();
 
-const PORT=process.env.PORT||7000;
-const MONGOURL=Process.env.MONGO-URL;
+const app=express();
+app.use(bodyParser.json());
+
+
+const PORT=process.env.PORT||8000;
+const MONGOURL=process.env.MONGO_URL;
+
 
 mongoose
 .connect(MONGOURL)
